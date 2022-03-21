@@ -45,7 +45,7 @@ export default class BookList {
     window.location.reload();
   };
 
-  loadScreen() {
+  loadScreen = () => {
     const books = JSON.parse(localStorage.getItem('books'));
     if (!books) {
       this.createEmpty();
