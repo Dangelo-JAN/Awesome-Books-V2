@@ -68,7 +68,7 @@ export default class BookList {
       removeBtn.addEventListener('click', () => {
         this.remove(id);
       });
-      divBtn.append(removeBtn);  
+      divBtn.append(removeBtn);
       bookName.textContent = `"${name}" by`;
       bookAuthor.textContent = author;
       div.append(bookName, bookAuthor, divBtn);
