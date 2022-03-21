@@ -1,16 +1,16 @@
 export default class BookList {
-  bookSection = document.getElementById("book-section");
+  bookSection = document.getElementById('book-section');
 
-  addBtn = document.getElementById("add");
+  addBtn = document.getElementById('add');
 
   createEmpty = () => {
     const books = [];
-    localStorage.setItem("books", JSON.stringify(books));
+    localStorage.setItem('books', JSON.stringify(books));
   };
 
   add = (e) => {
-    const name = document.getElementById("input-name").value;
-    const author = document.getElementById("input-author").value;
+    const name = document.getElementById('input-name').value;
+    const author = document.getElementById('input-author').value;
     const books = [];
 
     const book = {
@@ -19,29 +19,29 @@ export default class BookList {
       author,
     };
 
-    if (localStorage.getItem("books") === null) {
+    if (localStorage.getItem('books') === null) {
       books.push(book);
-      localStorage.setItem("books", JSON.stringify(books));
+      localStorage.setItem('books', JSON.stringify(books));
     } else {
-      const books = JSON.parse(localStorage.getItem("books"));
+      const books = JSON.parse(localStorage.getItem('books'));
       book.id = books.length;
       books.push(book);
-      localStorage.setItem("books", JSON.stringify(books));
+      localStorage.setItem('books', JSON.stringify(books));
     }
-    document.getElementById("form").reset();
+    document.getElementById('form').reset();
     e.preventDefault();
     window.location.reload();
   };
 
   remove = (id) => {
-    const books = JSON.parse(localStorage.getItem("books"));
+    const books = JSON.parse(localStorage.getItem('books'));
     for (let i = 0; i < books.length; i += 1) {
       if (id === books[i].id) {
         books.splice(i, 1);
       }
     }
 
-    localStorage.setItem("books", JSON.stringify(books));
+    localStorage.setItem('books', JSON.stringify(books));
     window.location.reload();
   };
 
