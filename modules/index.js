@@ -1,11 +1,11 @@
-import BookList from './booklist';
+import BookList from './booklist.js';
+import { DateTime } from './luxon/src/luxon.js';
 
 const book = new BookList();
 document.getElementById('form').addEventListener('submit', book.add);
 book.loadScreen();
 
-const dt = new Date();
-document.getElementById('date-time').innerHTML = dt;
+document.getElementById('date-time').innerHTML = DateTime.now();
 
 const list = document.getElementById('book-section');
 const addNew = document.getElementById('add-book');
